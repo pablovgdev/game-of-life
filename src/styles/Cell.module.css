@@ -1,0 +1,18 @@
+.cell {
+  width: 20px;
+  height: 20px;
+  display: flex;
+	justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.alive {
+  composes: cell;
+  background-color: white;
+}
+
+.dead {
+  composes: cell;
+  background-color: black;
+}

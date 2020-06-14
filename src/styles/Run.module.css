@@ -1,0 +1,23 @@
+.run {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  font-size: 30px;
+  z-index: 1;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+}
+
+.stop {
+  position: fixed;
+  top: 0;
+  left: 50px;
+  padding: 10px;
+  font-size: 30px;
+  z-index: 1;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+}
