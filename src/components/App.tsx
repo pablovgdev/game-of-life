@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { generateCells } from '../util/cell';
+import styles from "../styles/App.module.css";
 import GameContext from './GameContext';
-import Grid from './Grid';
+import Grid, { generateCells } from './Grid';
 import Run from './Run';
 import Stop from './Stop';
 
@@ -11,11 +11,13 @@ const App: React.FC = () => {
   const context = { cells, setCells, run, setRun };
 
   return (
-    <GameContext.Provider value={context}>
-      <Run />
-      <Stop />
-      <Grid />
-    </GameContext.Provider>
+    <div className={styles.app}>
+      <GameContext.Provider value={context}>
+        <Run />
+        <Stop />
+        <Grid />
+      </GameContext.Provider>
+    </div>
   );
 }
 

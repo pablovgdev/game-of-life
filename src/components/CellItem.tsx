@@ -20,7 +20,12 @@ const CellItem: React.FC<CellProps> = ({ alive, row, col }) => {
     }
   }
 
-  return <div className={alive ? styles.alive : styles.dead} onClick={onClick()}></div>;
+  return (
+    <div
+      className={alive ? styles.alive : styles.dead}
+      onClick={onClick()}
+    ></div>
+  )
 }
 
 export default CellItem;

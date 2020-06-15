@@ -1,5 +1,5 @@
 import React from "react";
-import { Cell } from "../util/cell";
+import { Cell } from "./Grid";
 
 export interface IGameContext {
   cells: Cell[][];
