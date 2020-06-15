@@ -13,8 +13,8 @@ const CellItem: React.FC<CellProps> = ({ alive, row, col }) => {
 
   const onClick = () => () => {
     if (!run) {
-      const newCells = [...cells];
       console.log(row, col);
+      const newCells = [...cells];
       newCells[row][col].alive = !cells[row][col].alive;
       setCells(newCells);
     }

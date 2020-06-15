@@ -9,6 +9,7 @@ export interface Cell {
   col: number;
 }
 
+// Create the bidimensional cell array
 export const generateCells = (): Cell[][] => {
   const cells: Cell[][] = [];
 
@@ -23,6 +24,7 @@ export const generateCells = (): Cell[][] => {
   return cells;
 }
 
+// Find the amount of cells that fits in the screen
 export const calculateCells = (screenSize: number) => {
   const gridCellSize = 21; // Cell size + Cell gap
   let cells = 0;
@@ -50,7 +52,7 @@ const Grid: React.FC = () => {
   })
 
   useEffect(() => {
-    const getSurroundingCells = (cell: Cell): number => {
+    const getSurroundingCellsCount = (cell: Cell): number => {
       let surroundingCells = 0;
 
       for (let row = cell.row - 1; row <= cell.row + 1; row++) {
@@ -70,13 +72,13 @@ const Grid: React.FC = () => {
       return surroundingCells;
     }
 
-    const calculate = () => {
+    const calculateNextState = () => {
       const cellsString = JSON.stringify(cells);
       const newCells = JSON.parse(cellsString);
 
       for (let row = 0; row < cells.length; row++) {
         for (let col = 0; col < cells[0].length; col++) {
-          const surroundingCells = getSurroundingCells(cells[row][col]);
+          const surroundingCells = getSurroundingCellsCount(cells[row][col]);
 
           if (
             cells[row][col].alive && (
@@ -102,7 +104,7 @@ const Grid: React.FC = () => {
     }
 
     if (run) {
-      const interval = setInterval(() => calculate(), 50);
+      const interval = setInterval(() => calculateNextState(), 50);
       return () => clearInterval(interval);
     }
   }, [run, cells, setCells, setRun]);
