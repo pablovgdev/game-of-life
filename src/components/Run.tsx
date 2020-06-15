@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import GameContext from "./GameContext";
-import styles from "../styles/Run.module.css";
+import styles from "../styles/Button.module.css";
 
 const Run: React.FC = () => {
   const { run, setRun } = useContext(GameContext);

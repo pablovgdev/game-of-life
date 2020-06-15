@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import styles from "../styles/Run.module.css";
+import styles from "../styles/Button.module.css";
 import GameContext from "./GameContext";
 import { generateCells } from "./Grid";
 
